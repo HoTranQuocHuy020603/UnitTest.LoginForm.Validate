@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Username:</label>
+        <input type="text" formControlName="username" id="username">
+    </div>
+    <span id="username-error-msg" *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <span id="blank-username-error" *ngIf="f.username.errors.required" 
+        style="color:red">Please enter username.</span>
+    </span>
+    <br>
+    <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password" id="pasword">
+    </div>
+
+
+    <span id="password-error-msg" *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <span id="blank-password-error" *ngIf="f.password.errors.required"
+         style="color:red">Please enter password.</span>
+    </span>
+    <div>
+        <button type="submit" id="login-btn">Submit</button>
+    </div>
+</form>
